@@ -6,6 +6,7 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./form-of-payment.component.css"]
 })
 export class FormOfPaymentComponent implements OnInit {
+  isTooltipVisible: boolean = false;
   constructor() {}
 
   ngOnInit() {}
@@ -23,5 +24,8 @@ export class FormOfPaymentComponent implements OnInit {
 
       clickedElement.className += " btn-primary";
     }
+  }
+  tooltipMe() {
+    this.isTooltipVisible = true;
   }
 }
