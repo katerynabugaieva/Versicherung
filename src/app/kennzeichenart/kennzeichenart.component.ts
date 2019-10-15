@@ -1,17 +1,16 @@
 import { Component, OnInit } from "@angular/core";
 
 @Component({
-  selector: "app-form-of-payment",
-  templateUrl: "./form-of-payment.component.html",
-  styleUrls: ["./form-of-payment.component.css"]
+  selector: "app-kennzeichenart",
+  templateUrl: "./kennzeichenart.component.html",
+  styleUrls: ["./kennzeichenart.component.css"]
 })
-export class FormOfPaymentComponent implements OnInit {
-  isTooltipVisible: boolean = false;
+export class KennzeichenartComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {}
 
-  onFormPaymentClick($event) {
+  onKennzeichenartClick($event) {
     const clickedElement = $event.target || $event.srcElement;
 
     if (clickedElement.nodeName === "BUTTON") {
@@ -24,8 +23,5 @@ export class FormOfPaymentComponent implements OnInit {
 
       clickedElement.className += " btn-primary";
     }
-  }
-  tooltipMe() {
-    this.isTooltipVisible = true;
   }
 }
