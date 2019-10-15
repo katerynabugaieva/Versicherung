@@ -1,0 +1,59 @@
+<!--
+  <div class="container">
+  <div class="card-container">
+    <div class="card card-small" (click)="selection.value = 'component'" tabindex="0">
+      <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+        <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" />
+      </svg>
+
+      <span>New Component</span>
+    </div>
+  </div>
+</div>
+-->
+<form>
+  <div class="form-group row">
+    <div class="col-4"><label> Wie wurde das Fahrzeug finanziert?</label></div>
+    <div class="col-7">
+      <button type="button" class="btn btn-primary btn-sm" aria-pressed="true">Barkauf</button>
+      <button type="button" class="btn btn-secondary btn-sm">Kredit</button>
+      <button type="button" class="btn btn-secondary btn-sm">Leasing</button>
+    </div>
+
+    <div class="col-1"><button>?</button></div>
+  </div>
+
+  <hr />
+  <div class="form-group row">
+    <div class="col-4"><label> Erstzulassung des Fahrzeugs im Monat</label></div>
+    <div class="col-7"><input type="date" /></div>
+    <div class="col-1"><button>?</button></div>
+  </div>
+  <hr />
+
+  <div class="form-group row">
+    <div class="col-4"><label> Zulassung auf Sie</label></div>
+    <div class="col-7"><input type="date" /></div>
+    <div class="col-1"><button>?</button></div>
+  </div>
+
+  <hr />
+
+  <div class="form-group row">
+    <div class="col-4"><label> Kennzeichenart</label></div>
+    <div class="col-7">
+      <button type="button" class="btn btn-primary btn-sm" aria-pressed="true">Normal</button>
+      <button type="button" class="btn btn-secondary btn-sm">Saison</button>
+      <button type="button" class="btn btn-secondary btn-sm">Sonstige</button>
+    </div>
+
+    <div class="col-1"><button>?</button></div>
+  </div>
+
+  <hr />
+  <div class="form-group row">
+    <div class="col-4"><label> Kennzeichen Ihres Fahrzeugs</label> <input type="text" placeholder="X" /></div>
+    <div class="col-7"><input type="text" placeholder="YZ" /> <input type="number" placeholder="1234" /></div>
+    <div class="col-1"><button>?</button></div>
+  </div>
+</form>
