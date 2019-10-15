@@ -24,7 +24,4 @@ export class KennzeichenartComponent implements OnInit {
       clickedElement.className += " btn-primary";
     }
   }
-  tooltipMe() {
-    this.isTooltipVisible = true;
-  }
 }
