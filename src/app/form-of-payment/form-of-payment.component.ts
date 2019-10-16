@@ -25,6 +25,7 @@ export class FormOfPaymentComponent implements OnInit {
       clickedElement.className += " btn-primary";
     }
   }
+
   tooltipMe() {
     this.isTooltipVisible = true;
   }
