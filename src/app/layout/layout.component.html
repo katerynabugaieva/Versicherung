@@ -14,17 +14,22 @@
 <form>
   <div class="form-group"><app-form-of-payment></app-form-of-payment></div>
   <hr />
+
   <div class="form-group row">
-    <div class="col-4"><label> Erstzulassung des Fahrzeugs im Monat</label></div>
-    <div class="col-7"><input type="date" /></div>
-    <div class="col-1"><button>?</button></div>
+    <div class="col-5"><label> Erstzulassung des Fahrzeugs im Monat</label></div>
+    <div class="col-6">
+      <input type="number" min="1" max="12" placeholder="MM" /> <span>.</span> <input type="number" placeholder="JJJJ" />
+    </div>
+    <div class="col-1"><app-icon></app-icon></div>
   </div>
   <hr />
 
   <div class="form-group row">
-    <div class="col-4"><label> Zulassung auf Sie</label></div>
-    <div class="col-7"><input type="date" /></div>
-    <div class="col-1"><button>?</button></div>
+    <div class="col-5"><label> Zulassung auf Sie</label></div>
+    <div class="col-6">
+      <input type="number" min="1" max="12" placeholder="MM" /> <span>.</span> <input type="number" placeholder="JJJJ" />
+    </div>
+    <div class="col-1"><app-icon></app-icon></div>
   </div>
 
   <hr />
@@ -33,9 +38,8 @@
 
   <hr />
   <div class="form-group row">
-    <div class="col-4"><label> Kennzeichen Ihres Fahrzeugs</label> <input type="text" placeholder="X" /></div>
-    <div class="col-7"><input type="text" placeholder="YZ" /> <input type="number" placeholder="1234" /></div>
-    <div class="col-1"><button>?</button></div>
+    <div class="col-5"><label> Kennzeichen Ihres Fahrzeugs</label> <input type="text" placeholder="X" /></div>
+    <div class="col-6"><input type="text" placeholder="YZ" /> <input type="number" placeholder="1234" /></div>
+    <div class="col-1"><app-icon></app-icon></div>
   </div>
 </form>
-<div class="tooltip">Hover over me <span class="tooltiptext">Tooltip text</span></div>
