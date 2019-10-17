@@ -22,8 +22,8 @@ export class ErstzulassungComponent implements OnInit {
           Validators.required,
           Validators.max(this.currentYear),
           Validators.min(this.currentYear - 89),
-          Validators.pattern('\d{4}$')
-         // this.consoleMe.bind(this)
+          Validators.pattern('[0-9]{4}$'),
+          this.consoleMe.bind(this)
         ])
       })
     });
@@ -33,3 +33,5 @@ export class ErstzulassungComponent implements OnInit {
     console.log(control);
   }
 }
+
+// \d
