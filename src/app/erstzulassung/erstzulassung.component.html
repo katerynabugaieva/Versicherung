@@ -1,6 +1,31 @@
 <div class="row">
   <div class="col-5"><label> Erstzulassung des Fahrzeugs im Monat</label></div>
   <div class="col-6">
+    <div [formGroup]="form">
+      <div formGroupName="registration">
+        <div class="form-group inputDisplay" [ngClass]="{ 'has-error': isInvalidOrTouched() }">
+          <input type="text" class="form-control inputDate" formControlName="month" placeholder="MM" /><span>.</span>
+          <input type="text" class="form-control inputDate" formControlName="year" placeholder="JJJJ" />
+        </div>
+        <p *ngIf="isInvalidOrTouched()">
+          <span *ngIf="hasTemplateErr()">Format ungültig</span>
+          <span *ngIf="form.get('registration.year').errors['max']">
+            Das Erstzulassungsdatum darf nicht in der Zukunft liegen.
+          </span>
+          <span *ngIf="form.get('registration.year').errors['min']">
+            Das Fahrzeug darf nicht älter als 89 Jahre sein, bitte prüfen Sie das Erstzulassungsdatum.
+          </span>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="col-1"><app-icon></app-icon></div>
+</div>
+
+<!--
+<div class="row">
+  <div class="col-5"><label> Erstzulassung des Fahrzeugs im Monat</label></div>
+  <div class="col-6">
       <form [formGroup]="form">
           <div formGroupName="registration">
             <div class="form-group inputDisplay" [ngClass]="{ 'has-error': isInvalidOrTouched()}">
@@ -22,5 +47,5 @@
         </form>
   </div>
   <div class="col-1"><app-icon></app-icon></div>
-
 </div>
+-->

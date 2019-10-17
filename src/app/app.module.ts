@@ -19,7 +19,7 @@ import { ZulassungComponent } from './zulassung/zulassung.component';
     KennzeichenartComponent,
     KennzeichenFahrzeugComponent,
     ErstzulassungComponent,
-    ZulassungComponent,
+    ZulassungComponent
   ],
   imports: [
     BrowserModule,

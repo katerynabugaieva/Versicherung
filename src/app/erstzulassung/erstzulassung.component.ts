@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
@@ -22,8 +22,8 @@ export class ErstzulassungComponent implements OnInit {
           Validators.required,
           Validators.max(this.currentYear),
           Validators.min(this.currentYear - 89),
-          Validators.pattern('^[0-9]{4}$'),
-        //  this.consoleMe.bind(this)
+          Validators.pattern('^[0-9]{4}$')
+          //  this.consoleMe.bind(this)
         ])
       })
     });
@@ -33,23 +33,26 @@ export class ErstzulassungComponent implements OnInit {
     console.log(control);
   }
 
-  hasTemplateErr() {
+  hasTemplateErr(control: FormControl) {
     const form = this.form;
-    return (form.get('registration.month').errors.required ||
-    form.get('registration.month').errors.pattern ||
-    form.get('registration.year').errors.required ||
-    form.get('registration.year').errors.pattern) &&
-    !form.get('registration.year').errors.max &&
-    !form.get('registration.year').errors.min;
+    return (
+      (form.get('registration.month').errors.required ||
+        form.get('registration.month').errors.pattern ||
+        form.get('registration.year').errors.required ||
+        form.get('registration.year').errors.pattern) &&
+      !form.get('registration.year').errors.max &&
+      !form.get('registration.year').errors.min
+    );
   }
 
   isInvalidOrTouched() {
     const form = this.form;
     return (
-  form.get('registration.month').invalid &&
-  form.get('registration.month').touched) || (
-  form.get('registration.year').invalid &&
-  form.get('registration.year').touched);
+      (form.get('registration.month').invalid &&
+        form.get('registration.month').touched) ||
+      (form.get('registration.year').invalid &&
+        form.get('registration.year').touched)
+    );
   }
 }
 
