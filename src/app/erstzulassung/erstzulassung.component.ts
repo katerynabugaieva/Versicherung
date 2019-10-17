@@ -32,6 +32,25 @@ export class ErstzulassungComponent implements OnInit {
   consoleMe(control: FormControl) {
     console.log(control);
   }
+
+  hasTemplateErr() {
+    const form = this.form;
+    return (form.get('registration.month').errors.required ||
+    form.get('registration.month').errors.pattern ||
+    form.get('registration.year').errors.required ||
+    form.get('registration.year').errors.pattern) &&
+    !form.get('registration.year').errors.max &&
+    !form.get('registration.year').errors.min;
+  }
+
+  isInvalidOrTouched() {
+    const form = this.form;
+    return (
+  form.get('registration.month').invalid &&
+  form.get('registration.month').touched) || (
+  form.get('registration.year').invalid &&
+  form.get('registration.year').touched);
+  }
 }
 
 // \d

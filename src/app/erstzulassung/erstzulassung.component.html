@@ -3,26 +3,13 @@
   <div class="col-6">
       <form [formGroup]="form">
           <div formGroupName="registration">
-            <div class="form-group inputDisplay" [ngClass]="{ 'has-error': (
-            form.get('registration.month').invalid && 
-            form.get('registration.month').touched) || (
-            form.get('registration.year').invalid && 
-            form.get('registration.year').touched) }">
+            <div class="form-group inputDisplay" [ngClass]="{ 'has-error': isInvalidOrTouched()}">
               <input type="text" class="form-control inputDate" formControlName="month" placeholder="MM"/><span>.</span>
               <input type="text" class="form-control inputDate" formControlName="year" placeholder="JJJJ"/>
-      
             </div>
-            <p *ngIf="(form.get('registration.month').invalid && form.get('registration.month').touched) || 
-            (form.get('registration.year').invalid && form.get('registration.year').touched)">
+            <p *ngIf="isInvalidOrTouched()">
               <span
-                *ngIf="
-                  (form.get('registration.month').errors['required'] ||
-                  form.get('registration.month').errors['pattern'] ||
-                  form.get('registration.year').errors['required'] ||
-                  form.get('registration.year').errors['pattern']) && 
-                  !form.get('registration.year').errors['max'] && 
-                  !form.get('registration.year').errors['min']
-                "
+                *ngIf="hasTemplateErr()"
                 >Format ungültig</span
               >
               <span *ngIf="form.get('registration.year').errors['max']">
