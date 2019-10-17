@@ -8,10 +8,9 @@
             form.get('registration.month').touched) || (
             form.get('registration.year').invalid && 
             form.get('registration.year').touched) }">
-              <input type="text" class="form-control" formControlName="month" placeholder="MM"/>.
+              <input type="text" class="form-control" formControlName="month" placeholder="MM"/><span>.</span>
               <input type="text" class="form-control" formControlName="year" placeholder="JJJJ"/>
       
-             
             </div>
             <p *ngIf="(form.get('registration.month').invalid && form.get('registration.month').touched) || 
             (form.get('registration.year').invalid && form.get('registration.year').touched)">
@@ -36,4 +35,5 @@
         </form>
   </div>
   <div class="col-1"><app-icon></app-icon></div>
+
 </div>
