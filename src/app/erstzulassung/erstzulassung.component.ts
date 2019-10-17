@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
@@ -23,7 +23,7 @@ export class ErstzulassungComponent implements OnInit {
           Validators.max(this.currentYear),
           Validators.min(this.currentYear - 89),
           Validators.pattern('[0-9]{4}$'),
-          this.consoleMe.bind(this)
+        //  this.consoleMe.bind(this)
         ])
       })
     });
