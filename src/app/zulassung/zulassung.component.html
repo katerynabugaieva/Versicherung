@@ -1,0 +1,43 @@
+<div class="row">
+        <div class="col-5"><label> Zulassung auf Sie</label></div>
+        <div class="col-6">
+            <form [formGroup]="formZulassung">
+                <div formGroupName="registrationZulassung">
+                  <div class="form-group inputDisplay" [ngClass]="{ 'has-error': (
+                  formZulassung.get('registrationZulassung.monthZulassung').invalid && 
+                  formZulassung.get('registrationZulassung.monthZulassung').touched) || (
+                  formZulassung.get('registrationZulassung.yearZulassung').invalid && 
+                  formZulassung.get('registrationZulassung.yearZulassung').touched) }">
+                    <input type="text" class="form-control inputDate" formControlName="monthZulassung" placeholder="MM"/><span>.</span>
+                    <input type="text" class="form-control inputDate" formControlName="yearZulassung" placeholder="JJJJ"/>
+            
+                  </div>
+                  <p *ngIf="(formZulassung.get('registrationZulassung.monthZulassung').invalid && formZulassung.get('registrationZulassung.monthZulassung').touched) || 
+                  (formZulassung.get('registrationZulassung.yearZulassung').invalid && formZulassung.get('registrationZulassung.yearZulassung').touched)">
+                    <span
+                      *ngIf="
+                        (formZulassung.get('registrationZulassung.monthZulassung').errors['required'] ||
+                        formZulassung.get('registrationZulassung.monthZulassung').errors['pattern'] ||
+                        formZulassung.get('registrationZulassung.yearZulassung').errors['required'] ||
+                        formZulassung.get('registrationZulassung.yearZulassung').errors['pattern']) && 
+                        !formZulassung.get('registrationZulassung.yearZulassung').errors['max'] && 
+                        !formZulassung.get('registrationZulassung.yearZulassung').errors['min']
+                      "
+                      >format ungültig</span
+                    >
+                    <span *ngIf="formZulassung.get('registrationZulassung.yearZulassung').errors['max']">
+                      Das Erstzulassungsdatum darf nicht in der Zukunft liegen.
+                  </span>
+                  <span *ngIf="formZulassung.get('registrationZulassung.yearZulassung').errors['min']">
+                    Das Fahrzeug darf nicht älter als 89 Jahre sein, bitte prüfen Sie das Erstzulassungsdatum.
+                </span>
+                <span >
+                       Зависимость между соседним компонентолм
+                    </span>
+                </div>
+              </form>
+        </div>
+      
+        <div class="col-1"><app-icon></app-icon></div>
+      
+      </div>

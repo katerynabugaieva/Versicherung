@@ -8,8 +8,8 @@
             form.get('registration.month').touched) || (
             form.get('registration.year').invalid && 
             form.get('registration.year').touched) }">
-              <input type="text" class="form-control" formControlName="month" placeholder="MM"/><span>.</span>
-              <input type="text" class="form-control" formControlName="year" placeholder="JJJJ"/>
+              <input type="text" class="form-control inputDate" formControlName="month" placeholder="MM"/><span>.</span>
+              <input type="text" class="form-control inputDate" formControlName="year" placeholder="JJJJ"/>
       
             </div>
             <p *ngIf="(form.get('registration.month').invalid && form.get('registration.month').touched) || 

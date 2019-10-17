@@ -10,6 +10,7 @@ import { IconComponent } from './icon/icon.component';
 import { KennzeichenartComponent } from './kennzeichenart/kennzeichenart.component';
 import { KennzeichenFahrzeugComponent } from './kennzeichen-fahrzeug/kennzeichen-fahrzeug.component';
 import { ErstzulassungComponent } from './erstzulassung/erstzulassung.component';
+import { ZulassungComponent } from './zulassung/zulassung.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { ErstzulassungComponent } from './erstzulassung/erstzulassung.component'
     KennzeichenartComponent,
     KennzeichenFahrzeugComponent,
     ErstzulassungComponent,
+    ZulassungComponent,
   ],
   imports: [
     BrowserModule,
