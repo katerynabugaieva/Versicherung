@@ -4,12 +4,20 @@
     <div [formGroup]="finInfoData">
       <div formGroupName="payment">
         <div class="form-group">
-          <button class="form-control" type="button" formControlName="bBarkauf">Barkauf</button>
-          <button class="form-control" type="button" formControlName="bKredit">Kredit</button>
-          <button class="form-control" type="button" formControlName="bLeasing">Leasing</button>
+          <input class="form-control" type="button" formControlName="bBarkauf" />
+          <input class="form-control" type="button" formControlName="bKredit" />
+          <input class="form-control" type="button" formControlName="bLeasing" />
+          <button (click)="showTheAppComp()">app comp</button>
         </div>
       </div>
     </div>
   </div>
   <div class="col-1"><app-icon></app-icon></div>
 </div>
+
+<!--
+
+    <button class="form-control" type="button" formControlName="bBarkauf">Barkauf</button>
+          <button class="form-control" type="button" formControlName="bKredit">Kredit</button>
+          <button class="form-control" type="button" formControlName="bLeasing">Leasing</button>
+-->

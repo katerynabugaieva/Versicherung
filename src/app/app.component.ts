@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
@@ -6,16 +6,45 @@ import { FormGroup, FormControl } from '@angular/forms';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   public globalString = 'I AM PUBLIC!';
   public form: FormGroup;
-  constructor() {}
-  ngOnInit() {
+
+  public fields: any[] = [
+    {
+      type: 'text',
+      name: 'firstName',
+      label: 'First Name',
+      value: '',
+      required: true
+    },
+    {
+      type: 'text',
+      name: 'lastName',
+      label: 'Last Name',
+      value: '',
+      required: true
+    },
+
+    {
+      type: 'checkbox',
+      name: 'hobby',
+      label: 'Hobby',
+      required: true,
+      options: [{ key: 'f', label: 'Fishing' }, { key: 'c', label: 'Cooking' }]
+    }
+  ];
+  constructor() {
     this.form = new FormGroup({
       //  financeForm: new FormControl('app component'),
       finForm: new FormGroup({}),
-      erstzulassungForm: new FormGroup({})
+      erstzulassungForm: new FormGroup({}),
+      fields: new FormControl(JSON.stringify(this.fields))
     });
     console.log(this.form);
+  }
+
+  getFields() {
+    return this.fields;
   }
 }

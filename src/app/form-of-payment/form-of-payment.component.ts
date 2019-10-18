@@ -1,5 +1,5 @@
-import { Component, OnInit, ComponentFactoryResolver } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl, ControlValueAccessor } from '@angular/forms';
 import { AppComponent } from '../app.component';
 
 @Component({
@@ -7,6 +7,7 @@ import { AppComponent } from '../app.component';
   templateUrl: './form-of-payment.component.html',
   styleUrls: ['./form-of-payment.component.css']
 })
+// , ControlValueAccessor
 export class FormOfPaymentComponent implements OnInit {
   constructor(public finInfoForm: AppComponent) {}
 
@@ -14,14 +15,29 @@ export class FormOfPaymentComponent implements OnInit {
   ngOnInit() {
     this.finInfoData = new FormGroup({
       payment: new FormGroup({
-        month: new FormControl('')
-        //  bBarkauf: new FormControl('barkauf'),
-        //  bKredit: new FormControl('kredit'),
-        //  bLeasing: new FormControl('leasinf')
+        bBarkauf: new FormControl('barkauf'),
+        bKredit: new FormControl('kredit'),
+        bLeasing: new FormControl('leasing')
       })
     });
-
     this.finInfoForm.form.controls.finForm = this.finInfoData;
+  }
+  /*
+  writeValue(value: any) {
+    // any inputs in a form
+  }
+  registerOnChange(fn: (value: any) => void) {
+    // TO do
+    // call if forma has been updated by user
+  }
+  registerOnTouched(fn: () => void) {
+    //  should component was updated
+  }
+
+  */
+
+  showTheAppComp() {
+    console.log(this.finInfoForm);
   }
 
   onFormPaymentClick($event) {
