@@ -1,4 +1,5 @@
 <form>
+  <!--
     <div class="form-group">
       <app-form-of-payment></app-form-of-payment>
     </div>
@@ -23,14 +24,22 @@
     <div class="form-group">
       <app-kennzeichen-fahrzeug></app-kennzeichen-fahrzeug>
     </div>
-  
-    <br>
-    <br>
-    <br>
-    <hr /> <hr />
+  -->
+  <div class="form-group"><app-form-of-payment></app-form-of-payment></div>
+  <div class="form-group"><app-erstzulassung></app-erstzulassung></div>
+</form>
 
-    <div class="form-group">
-        <app-erstzulassung></app-erstzulassung>
+<div>
+  <div class="col-sm-12">
+    <div class="card">
+      <div class="card-header">Dynamic Forms</div>
+      <div class="card-body"><app-dynamic-form-builder [fields]="getFields()"></app-dynamic-form-builder></div>
     </div>
-  </form>
-  
+  </div>
+
+  <div class="col-sm-12">
+    <div class="form-group" [formGroup]="form">
+      <label>JSON</label> <textarea formControlName="fields" class="form-control" rows="3"></textarea>
+    </div>
+  </div>
+</div>

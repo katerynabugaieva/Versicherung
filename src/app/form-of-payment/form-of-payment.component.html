@@ -1,10 +1,23 @@
 <div class="row">
   <div class="col-5"><label> Wie wurde das Fahrzeug finanziert?</label></div>
-  <div class="btn-group col-6" (click)="onFormPaymentClick($event)">
-    <button class="btn-sm" type="button">Barkauf</button> <button class="btn-sm" type="button">Kredit</button>
-    <button class="btn-sm" type="button">Leasing</button>
+  <div class="col-6">
+    <div [formGroup]="finInfoData">
+      <div formGroupName="payment">
+        <div class="form-group">
+          <input class="form-control" type="button" formControlName="bBarkauf" />
+          <input class="form-control" type="button" formControlName="bKredit" />
+          <input class="form-control" type="button" formControlName="bLeasing" />
+          <button (click)="showTheAppComp()">app comp</button>
+        </div>
+      </div>
+    </div>
   </div>
   <div class="col-1"><app-icon></app-icon></div>
-  <div tooltip="tootip on right" placement="right" delay="500">tootip on right</div>
-  <span tooltip="Tooltip" placement="top" show-delay="500">Tooltip on top</span>
 </div>
+
+<!--
+
+    <button class="form-control" type="button" formControlName="bBarkauf">Barkauf</button>
+          <button class="form-control" type="button" formControlName="bKredit">Kredit</button>
+          <button class="form-control" type="button" formControlName="bLeasing">Leasing</button>
+-->
