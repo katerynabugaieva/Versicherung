@@ -21,7 +21,7 @@ import { DynamicFormBuilderModule } from './dynamic-form-builder/dynamic-form-bu
     AppComponent,
     FormOfPaymentComponent,
     IconComponent,
-    ErstzulassungComponent
+    ErstzulassungComponent,
 
     /*
     KennzeichenartComponent,

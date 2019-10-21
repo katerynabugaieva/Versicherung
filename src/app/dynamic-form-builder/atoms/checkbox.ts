@@ -8,10 +8,11 @@ import { FormGroup } from '@angular/forms';
 export class CheckBoxComponent {
   @Input() field: any = {};
   @Input() form: FormGroup;
-  get isValid() {
+  isValid() {
     return this.form.controls[this.field.name].valid;
   }
   get isDirty() {
     return this.form.controls[this.field.name].dirty;
   }
 }
+

@@ -39,7 +39,8 @@ export class AppComponent {
       //  financeForm: new FormControl('app component'),
       finForm: new FormGroup({}),
       erstzulassungForm: new FormGroup({}),
-      fields: new FormControl(JSON.stringify(this.fields))
+      fields: new FormControl(JSON.stringify(this.fields)),
+      myExtraForm: new FormGroup({})
     });
     console.log(this.form);
   }
